@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   #admin_root ''
 
   # GET routes
+  get 'emp_interventions' => 'pages#emp_interventions'
   get 'quote' => 'quotes#quote'
   get 'corporate' => 'pages#corporate'
   get 'residential' => 'pages#residential'
