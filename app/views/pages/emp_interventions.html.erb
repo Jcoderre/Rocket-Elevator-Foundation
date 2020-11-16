@@ -103,8 +103,62 @@
 				<!-- /Top Nav -->
 
 			</div>
+			<div class="text-center">
+            <h1> Welcome </h1>
+			</div>
 
-            <h1> helloo world </h1>
+                <!-- MAIN FORM -->
+
+                <div class="col-md-7 col-sm-7 mt-80">
+                    <form action="" id="quote-form" method="post" enctype="multipart/form-data">
+                        <h3 class="text-center fw-400 ">Fill out this interventions form.</h3>
+                        <fieldset>
+                            <div class="row justify-content-center mb-10">
+								<div class="col-md-6 ml-20 mr-20">
+  								<label for="full-name">CUSTOMERS ID</label>
+									<select id="building-type" class="form-control pointer" name="building">
+										<% @customers.each do |customer| %>
+										<tr>
+											<option><td><%= customer.id %></td><p>  </p><td><%= customer.company_name %></td></option>
+										</tr>
+										<% end %>
+									</select>
+								</div>
+                            </div>
+                            <div id="building-confirm-btn" class="row justify-content-center text-center">
+                                <div class="col-md-6 ml-20 mr-20">
+                                    <button type="button" style="width: 100%" class="btn btn-primary"><i class="fa fa-check"></i>CONFIRM</button>
+                                </div>
+                            </div>
+						</fieldset>
+					</form>
+				</div>
+
+				<div>
+					<h1>Listing Customers</h1>
+					<table>
+					<thead>
+						<tr>
+						<th> ID|__|</th>
+						<th>Company Name</th>
+						<th colspan="2"></th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<% @customers.each do |customer| %>
+						<tr>
+							<td><%= customer.id %></td>
+							<td><%= customer.company_name %></td>
+						</tr>
+						<% end %>
+					</tbody>
+					</table>
+				</div>
+			</div>
+
+
+			
 
             <footer id="footer">
 				<div class="container">

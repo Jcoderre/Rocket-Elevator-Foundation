@@ -8,4 +8,8 @@ class PagesController < ApplicationController
 
     def corporate
     end
+
+    def emp_interventions
+        @customers = Customer.all
+    end
 end
