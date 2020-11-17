@@ -115,7 +115,7 @@
                         <fieldset>
                             <div class="row justify-content-center mb-10">
 								<div class="col-md-6 ml-20 mr-20">
-  								<label for="full-name">CUSTOMERS ID</label>
+  								<label for="full-name">CUSTOMERS ID & COMPANY NAME</label>
 									<select id="building-type" class="form-control pointer" name="building">
 										<% @customers.each do |customer| %>
 										<tr>
@@ -130,10 +130,59 @@
                                     <button type="button" style="width: 100%" class="btn btn-primary"><i class="fa fa-check"></i>CONFIRM</button>
                                 </div>
                             </div>
-						</fieldset>
-					</form>
-				</div>
-
+                           <div class="row justify-content-center mb-10">
+								<div class="col-md-6 ml-20 mr-20">
+  								<label>BUILDINGS ID</label>
+									<select class="form-control pointer">
+										<% i = 0 %>
+										<% @customers.each do |customer| %>
+											<tr>
+												<option><td><%= customer.buildings.ids %></td><p>  </p><td><%= customer.company_name %></td></option>
+											</tr>
+											<% i += 1 %>
+										<% end %>
+									</select>
+								</div>
+                            </div>
+                           <div class="row justify-content-center mb-10">
+								<div class="col-md-6 ml-20 mr-20">
+  								<label>BATTERIES ID</label>
+									<select class="form-control pointer">
+										<% @customers.each do |customer| %>
+										<tr>
+											<option><td><%= customer.batteries.ids %></td><p>  </p><td><%= customer.company_name %></td></option>
+										</tr>
+										<% end %>
+									</select>
+								</div>
+                            </div>
+                           <div class="row justify-content-center mb-10">
+								<div class="col-md-6 ml-20 mr-20">
+  								<label>COLUMNS ID</label>
+									<select class="form-control pointer">
+										<% @customers.each do |customer| %>
+										<tr>
+											<option><td><%= customer.columns.ids %></td><p>  </p><td><%= customer.company_name %></td></option>
+										</tr>
+										<% end %>
+									</select>
+								</div>
+                            </div>
+                           <div class="row justify-content-center mb-10">
+								<div class="col-md-6 ml-20 mr-20">
+  								<label>ELEVATORS ID</label>
+									<select class="form-control pointer">
+										<% @customers.each do |customer| %>
+										<tr>
+											<option><td><%= customer.elevators.ids %></td><p>  </p><td><%= customer.company_name %></td></option>
+										</tr>
+										<% end %>
+									</select>
+								</div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
 				<div>
 					<h1>Listing Customers</h1>
 					<table>

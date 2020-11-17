@@ -11,5 +11,9 @@ class PagesController < ApplicationController
 
     def emp_interventions
         @customers = Customer.all
+        @buildings = Building.all
+        @batteries = Battery.all
+        @columns = Column.all
+        @elevators = Elevator.all
     end
 end
