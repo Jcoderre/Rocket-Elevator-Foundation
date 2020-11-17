@@ -1,7 +1,7 @@
 class CustomersController < InheritedResources::Base
 
   def index
-    @customers = Customer.all
+    
   end
 
   private

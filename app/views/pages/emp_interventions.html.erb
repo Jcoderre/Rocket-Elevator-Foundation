@@ -107,105 +107,79 @@
             <h1> Welcome </h1>
 			</div>
 
-                <!-- MAIN FORM -->
-
-                <div class="col-md-7 col-sm-7 mt-80">
-                    <form action="" id="quote-form" method="post" enctype="multipart/form-data">
-                        <h3 class="text-center fw-400 ">Fill out this interventions form.</h3>
-                        <fieldset>
-                            <div class="row justify-content-center mb-10">
-								<div class="col-md-6 ml-20 mr-20">
-  								<label for="full-name">CUSTOMERS ID & COMPANY NAME</label>
-									<select id="building-type" class="form-control pointer" name="building">
-										<% @customers.each do |customer| %>
-										<tr>
-											<option><td><%= customer.id %></td><p>  </p><td><%= customer.company_name %></td></option>
-										</tr>
-										<% end %>
-									</select>
-								</div>
-                            </div>
-                            <div id="building-confirm-btn" class="row justify-content-center text-center">
-                                <div class="col-md-6 ml-20 mr-20">
-                                    <button type="button" style="width: 100%" class="btn btn-primary"><i class="fa fa-check"></i>CONFIRM</button>
-                                </div>
-                            </div>
-                           <div class="row justify-content-center mb-10">
-								<div class="col-md-6 ml-20 mr-20">
-  								<label>BUILDINGS ID</label>
-									<select class="form-control pointer">
-										<% i = 0 %>
-										<% @customers.each do |customer| %>
-											<tr>
-												<option><td><%= customer.buildings.ids %></td><p>  </p><td><%= customer.company_name %></td></option>
-											</tr>
-											<% i += 1 %>
-										<% end %>
-									</select>
-								</div>
-                            </div>
-                           <div class="row justify-content-center mb-10">
-								<div class="col-md-6 ml-20 mr-20">
-  								<label>BATTERIES ID</label>
-									<select class="form-control pointer">
-										<% @customers.each do |customer| %>
-										<tr>
-											<option><td><%= customer.batteries.ids %></td><p>  </p><td><%= customer.company_name %></td></option>
-										</tr>
-										<% end %>
-									</select>
-								</div>
-                            </div>
-                           <div class="row justify-content-center mb-10">
-								<div class="col-md-6 ml-20 mr-20">
-  								<label>COLUMNS ID</label>
-									<select class="form-control pointer">
-										<% @customers.each do |customer| %>
-										<tr>
-											<option><td><%= customer.columns.ids %></td><p>  </p><td><%= customer.company_name %></td></option>
-										</tr>
-										<% end %>
-									</select>
-								</div>
-                            </div>
-                           <div class="row justify-content-center mb-10">
-								<div class="col-md-6 ml-20 mr-20">
-  								<label>ELEVATORS ID</label>
-									<select class="form-control pointer">
-										<% @customers.each do |customer| %>
-										<tr>
-											<option><td><%= customer.elevators.ids %></td><p>  </p><td><%= customer.company_name %></td></option>
-										</tr>
-										<% end %>
-									</select>
-								</div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-				<div>
-					<h1>Listing Customers</h1>
-					<table>
-					<thead>
-						<tr>
-						<th> ID|__|</th>
-						<th>Company Name</th>
-						<th colspan="2"></th>
-						</tr>
-					</thead>
+			<!-- MAIN FORM -->
+			<div class="container">
+				<%=form_with(scope: "Intervention")  do |f|  %>
+				
+					<%= f.select(:customer_id, Customer.all.collect {|c| [c.company_name, c.id]},  {prompt: "Select"}, {class: 'form-control'}) %>
+					<%= f.select(:building_id, Building.all.collect {|b| [b.id, b.id]}, {}, {class: 'form-control'}) %>
 					
-					<tbody>
-						<% @customers.each do |customer| %>
-						<tr>
-							<td><%= customer.id %></td>
-							<td><%= customer.company_name %></td>
-						</tr>
-						<% end %>
-					</tbody>
-					</table>
-				</div>
+					<%= f.label :building, :class => "col-sm5 control-label" %>
+					<select class="form-control" name="hour[customer_id]" id="form_customer_id">
+						<option value="">None</option>
+						<option value="1">Real Estate</option>
+						<option value="2">Time Sheet App</option>
+					</select>
+
+					<%= f.label :batteries, :class => "col-sm5 control-label" %>		
+					<select class="form-control" name="hour[building_id]" id="form_building_id", disabled="" >						
+						<option value="3">None</option>
+						<option value="4">Design</option>
+						<option value="6">Backend</option>
+					</select>
+					
+					<%= f.label :columns, :class => "col-sm5 control-label" %>	
+					<select class="form-control" name="hour[building_id]" id="form_building_id", disabled="" >
+						<option value="3">None</option>
+						<option value="4">Design</option>
+						<option value="6">Backend</option>
+					</select>
+
+					<%= f.label :elevators, :class => "col-sm5 control-label" %>		
+					<select class="form-control" name="hour[building_id]" id="form_building_id", disabled="" >						
+						<option value="3">None</option>
+						<option value="4">Design</option>
+						<option value="6">Backend</option>
+					</select>
+
+					<%= f.label :employee, :class => "col-sm5 control-label" %>	
+					<select class="form-control" name="hour[building_id]" id="form_building_id", disabled="" >						
+						<option value="3">None</option>
+						<option value="4">Design</option>
+						<option value="6">Backend</option>
+					</select>
+
+					<div class = "col-sm-10">
+						<%= text_area_tag(:description, "Nature of the intervention: ", size: "100x10")%>
+					</div>
+
+					<%= f.submit %>	
+
+				<% end %>
+	
 			</div>
 
+			<div>
+				<h1>Listing Customers</h1>
+				<table>
+				<thead>
+					<tr>
+					<th> ID|__|</th>
+					<th>Company Name</th>
+					<th colspan="2"></th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<% @customers.each do |customer| %>
+					<tr>
+						<td><%= customer.id %></td>
+						<td><%= customer.company_name %></td>
+					</tr>
+					<% end %>
+				</tbody>
+				</table>
+			</div>
 
 			
 

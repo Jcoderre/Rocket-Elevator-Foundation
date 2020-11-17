@@ -32,6 +32,9 @@ Rails.application.routes.draw do
   get 'admin_root' => 'elevators#index'
   get 'googledcf02c3ead535472.html' => 'pages#googledcf02c3ead535472.html'
 
+  get 'get_buildings_by_customer/:customers_id', to: 'buildings#get_buildings_by_customer'  
+  get '/building_search' => 'buildings#building_search'
+
   # POST routes
 
   post 'quote/create' => 'quotes#create'

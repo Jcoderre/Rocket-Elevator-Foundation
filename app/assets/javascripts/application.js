@@ -34,3 +34,5 @@
 //= require_tree ./slider.revolution/
 
 //= require quote
+
+//= require emp_interventions
