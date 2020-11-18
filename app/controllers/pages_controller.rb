@@ -14,6 +14,8 @@ class PagesController < ApplicationController
         @batteries = Battery.all
         @columns = Column.all
         @elevators = Elevator.all
+        @employees = Employee.all
+        @intervention = Intervention.new
 
         if params[:customer].present?
             @buildings = Customer.find(params[:customer]).buildings

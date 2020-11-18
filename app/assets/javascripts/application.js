@@ -35,4 +35,4 @@
 
 //= require quote
 
-//= require emp_interventions
+//= require empl_intervention
