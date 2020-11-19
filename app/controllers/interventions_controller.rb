@@ -73,7 +73,7 @@ class InterventionsController < ApplicationController
 
               \nThe employee # #{@intervention.employee_id} is assigned to the task.
 
-              \nDescription of the task : #{@intervention.report}
+              \nDescription of the task : #{@intervention.description}
               
               """}, :submitter_id => client.current_user.id, :priority => "high"
           )
@@ -94,7 +94,7 @@ class InterventionsController < ApplicationController
   private
 
     def intervention_params
-      params.require(:intervention).permit(:intervention_start, :intervention_stop, :result, :report, :status, :elevator_id, :author, :customer_id, :building_id, :battery_id, :column_id, :employee_id, :company_name)
+      params.require(:intervention).permit(:intervention_start, :intervention_stop, :result, :report, :status, :elevator_id, :author, :customer_id, :building_id, :battery_id, :column_id, :employee_id, :company_name, :description)
     end
 
 
