@@ -21,7 +21,7 @@ class InterventionsController < ApplicationController
               config.username = "jcoderre@outlook.fr/token"
           
               # Choose one of the following depending on your authentication choice
-              config.token = 'iRWjvviGk4gvAT2WJzz6bLn9jjcUgGqxNLBQXgrB'
+              config.token = ENV['zendesk_key']
               # config.password = "your zendesk password"
           
               # OAuth Authentication
