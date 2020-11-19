@@ -12,6 +12,7 @@ jQuery ->
     columns = $('#intervention_column_id').html()
     $('#intervention_elevator_id').parent().hide()
     elevators = $('#intervention_elevator_id').html()
+    none = '<option value="">None</option>';
 
     #Function to select your customer and show the building menu
     $('#intervention_customer_id').change ->
@@ -20,6 +21,7 @@ jQuery ->
         options = $(buildings).filter("optgroup[label=#{escaped_customer}]").html()
         if options
             $('#intervention_building_id').html(options)
+            $('#intervention_building_id').val('')
             $('#intervention_building_id').parent().show() 
         else
             $('#intervention_building_id').empty()
@@ -31,7 +33,7 @@ jQuery ->
         escaped_building = building.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
         options = $(batteries).filter("optgroup[label=#{escaped_building}]").html()
         if options
-            $('#intervention_battery_id').html(options)
+            $('#intervention_battery_id').html(none + options)
             $('#intervention_battery_id').parent().show() 
         else
             $('#intervention_battery_id').empty()
@@ -43,8 +45,8 @@ jQuery ->
         escaped_battery = battery.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
         options = $(columns).filter("optgroup[label=#{escaped_battery}]").html()
         if options
-            $('#intervention_column_id').html(options)
-            $('#intervention_column_id').parent().show() 
+            $('#intervention_column_id').html(none + options)
+            $('#intervention_column_id').parent().show()
         else
             $('#intervention_column_id').empty()
             $('#intervention_column_id').parent().hide()
@@ -56,7 +58,7 @@ jQuery ->
         options = $(elevators).filter("optgroup[label=#{escaped_column}]").html()
         console.log(options)
         if options
-            $('#intervention_elevator_id').html(options)
+            $('#intervention_elevator_id').html(none + options)
             $('#intervention_elevator_id').parent().show() 
         else
             $('#intervention_elevator_id').empty()
