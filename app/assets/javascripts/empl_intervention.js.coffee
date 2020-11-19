@@ -4,13 +4,13 @@
 
 jQuery ->
     # Hide option of the cascading dropdown menu
-    #$('#intervention_building_id').parent().hide()
+    $('#intervention_building_id').parent().hide()
     buildings = $('#intervention_building_id').html()
-    #$('#intervention_battery_id').parent().hide()
+    $('#intervention_battery_id').parent().hide()
     batteries = $('#intervention_battery_id').html()
-    #$('#intervention_column_id').parent().hide()
+    $('#intervention_column_id').parent().hide()
     columns = $('#intervention_column_id').html()
-    #$('#intervention_elevator_id').parent().hide()
+    $('#intervention_elevator_id').parent().hide()
     elevators = $('#intervention_elevator_id').html()
 
     #Function to select your customer and show the building menu
@@ -18,7 +18,6 @@ jQuery ->
         customer = $('#intervention_customer_id :selected').text()
         escaped_customer = customer.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
         options = $(buildings).filter("optgroup[label=#{escaped_customer}]").html()
-        console.log(options)
         if options
             $('#intervention_building_id').html(options)
             $('#intervention_building_id').parent().show() 
@@ -31,7 +30,6 @@ jQuery ->
         building = $('#intervention_building_id :selected').text()
         escaped_building = building.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
         options = $(batteries).filter("optgroup[label=#{escaped_building}]").html()
-        console.log(options)
         if options
             $('#intervention_battery_id').html(options)
             $('#intervention_battery_id').parent().show() 
@@ -44,7 +42,6 @@ jQuery ->
         battery = $('#intervention_battery_id :selected').text()
         escaped_battery = battery.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
         options = $(columns).filter("optgroup[label=#{escaped_battery}]").html()
-        console.log(options)
         if options
             $('#intervention_column_id').html(options)
             $('#intervention_column_id').parent().show() 
