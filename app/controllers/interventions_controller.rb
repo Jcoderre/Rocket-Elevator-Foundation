@@ -1,5 +1,4 @@
 class InterventionsController < ApplicationController
-  skip_before_action :verify_authenticity_token
   #before_action :set_admin_user, only: [:show, :edit, :update, :destroy]
 
     def create 
