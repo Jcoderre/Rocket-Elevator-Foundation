@@ -12,7 +12,7 @@ class Streamer
         
         request = Net::HTTP::Get.new(url)
         request["x-bingapis-sdk"] = 'true'
-        request["x-rapidapi-key"] = '02fcb00b00mshca77b871d58f815p1b82d4jsn385d5be92e0a'
+        request["x-rapidapi-key"] = ENV['bingapis_key']
         request["x-rapidapi-host"] = 'bing-news-search1.p.rapidapi.com'
         
         response = http.request(request)
