@@ -1,0 +1,25 @@
+require 'rails_helper'
+require 'elevator_media/streamer.rb'
+
+describe Streamer do
+
+    it "should work" do
+        expect(true).to be_truthy
+    end
+
+    describe ".add" do
+        context "two numbers" do
+            context "given '2,4'" do
+                it "returns 6" do
+                    expect(Streamer.add("2,4")).to eql(6)
+                end
+             end
+    
+            context "given '10,107'" do
+                it "returns 117" do
+                expect(Streamer.add("10,107")).to eql(117)
+                end
+            end
+        end
+    end
+end 
