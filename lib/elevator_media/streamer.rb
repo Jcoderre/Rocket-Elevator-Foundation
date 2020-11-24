@@ -19,7 +19,11 @@ class Streamer
         puts response.read_body
     end
 
+    def getContent
 
+    end
+
+    ## TESTING PART
     def self.add(input)
         if input.empty?
             0

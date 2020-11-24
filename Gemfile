@@ -121,3 +121,6 @@ group :development, :test do
     gem lib, git: "https://github.com/rspec/#{lib}.git", branch: 'main'
   end
 end
+
+## Get the coverage of our test
+gem 'simplecov', require: false, group: :test
