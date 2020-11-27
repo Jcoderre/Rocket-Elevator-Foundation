@@ -42,6 +42,8 @@ I have installed Simplecov for a better understanding of my test and to get a be
 >
 
 
+## You can reach the code via lib/spec/elevator_media_spec.rb
+
 ## Made by
 
 Joey Coderre 

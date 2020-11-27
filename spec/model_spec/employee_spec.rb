@@ -11,7 +11,7 @@ describe Employee do
         describe 'Each employee are link to...' do
             context 'Many battery'  do
                 it 'Should return true' do
-                    link_to_battery = Building.has_many(:batteris)
+                    link_to_battery = Building.has_many(:batteries)
                     expect(link_to_battery).to be_truthy
                 end
             end
