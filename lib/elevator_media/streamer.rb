@@ -20,8 +20,10 @@ module ElevatorMedia
             response = http.request(request)
             JSON.parse(response.read_body)
         end
+
             
         def self.getContent()
+            puts "GETCONTENT"
             content = "<div><p>"
             news = bing_news_streamer['value'][0]
             content = content + '<p>' + news['name'] + "</p>"
