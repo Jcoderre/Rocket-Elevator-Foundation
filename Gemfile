@@ -112,3 +112,19 @@ gem 'ibm_watson', '~> 1.6'
 gem 'zendesk_api'
 gem 'wavefile', '~> 1.1', '>= 1.1.1'
 gem 'dropbox_api'
+
+
+# Run against the main branch
+# (requires main-branch versions of all related RSpec libraries)
+group :development, :test do
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, git: "https://github.com/rspec/#{lib}.git", branch: 'main'
+  end
+end
+
+## Get the coverage of our test
+gem 'simplecov', require: false, group: :test
+
+group :development, :test do
+  gem 'factory_bot_rails'
+end

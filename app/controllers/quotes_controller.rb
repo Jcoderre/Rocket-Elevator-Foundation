@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-    skip_before_action :verify_authenticity_token
+    #skip_before_action :verify_authenticity_token
     before_action :set_quote, only: [:show, :edit, :update, :destroy]
   
     
@@ -56,7 +56,7 @@ class QuotesController < ApplicationController
                     config.url = "https://rocket-elevators-help.zendesk.com/api/v2" # e.g. https://mydesk.zendesk.com/api/v2
                 
                     # Basic / Token Authentication
-                    config.username = "dimitrov.fabien@gmail.com/token"
+                    config.username = "jcoderre@outlook.fr/token"
                 
                     # Choose one of the following depending on your authentication choice
                     config.token = ENV['zendesk_key']

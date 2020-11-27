@@ -1,0 +1,2 @@
+class ElevatorMedium < ApplicationRecord
+end
