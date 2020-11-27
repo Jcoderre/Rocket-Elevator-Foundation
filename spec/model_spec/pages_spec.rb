@@ -2,25 +2,32 @@ require 'rails_helper'
 
 describe PagesController, type: :controller do
     context 'Get #index' do
-        it 'returns a success response' do
+        before do  
             get :index
-            expect(response).to be_successful
         end
-
+        it 'returns a http response' do
+            expect(response).to have_http_status(:success)
+        end
     end
 
     context 'Get #residential' do
-        it 'returns a success response' do
+        before do  
             get :residential
-            expect(response).to be_successful
+        end
+        it 'returns a http response' do
+            expect(response).to have_http_status(:success)
         end
     end
 
     context 'Get #corporate' do
-        it 'returns a success response' do
+        before do  
             get :corporate
-            expect(response).to be_successful
+        end
+        it 'returns a http response' do
+            expect(response).to have_http_status(:success)
         end
     end
 
+
 end
+

@@ -5,8 +5,6 @@ require 'elevator_media/streamer.rb'
 
 describe ElevatorMedia::Streamer do 
 
-    #let(:content) { ElevatorMedia::Streamer.getcontent() }
-
     before(:all) do
         @content = ElevatorMedia::Streamer.getContent()
     end
@@ -33,7 +31,7 @@ describe ElevatorMedia::Streamer do
                 expect(@content).to include("2020")
             end
         end
-        
+
         context "Make it fail" do
             it "Deliberate Failure (Text ending with a </p> instead of </div>)" do
                 expect(@content).to_not end_with("</p>")
@@ -42,12 +40,12 @@ describe ElevatorMedia::Streamer do
     end
 
     describe 'bing_news_streamer' do
+        
         it 'should have a string' do
             http = ElevatorMedia::Streamer.bing_news_streamer()
             expect(http).to include(String)
         end
-
-        
+   
         it "Suppose to have News section" do
             within "Http has content" do
                 http = ElevatorMedia::Streamer.bing_news_streamer()
