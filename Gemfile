@@ -124,3 +124,7 @@ end
 
 ## Get the coverage of our test
 gem 'simplecov', require: false, group: :test
+
+group :development, :test do
+  gem 'factory_bot_rails'
+end
