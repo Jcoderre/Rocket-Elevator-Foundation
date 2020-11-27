@@ -29,7 +29,7 @@ module ElevatorMedia
             content = content + '<p>' + news['name'] + "</p>"
             content = content + news['description'] + "</div>"
             content = content + "<div><p>" + news['datePublished']+ '</p>'"</div>"
-            content
+            content     
         end
     end
 end
