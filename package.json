@@ -8,5 +8,30 @@
     "popper": "1.0.1",
     "popper.js": "^1.16.1",
     "turbolinks": "5.2.0"
+  },
+  "description": "Contains all code for Week 10 Test Driven Development of Odyssey.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jcoderre/Rocket-Elevator-Foundation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jcoderre/Rocket-Elevator-Foundation/issues"
+  },
+  "homepage": "https://github.com/Jcoderre/Rocket-Elevator-Foundation#readme",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "mock-git": "^2.0.0"
   }
 }

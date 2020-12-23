@@ -114,6 +114,10 @@ gem 'wavefile', '~> 1.1', '>= 1.1.1'
 gem 'dropbox_api'
 
 
+#New relic
+gem 'newrelic_rpm'
+
+
 # Run against the main branch
 # (requires main-branch versions of all related RSpec libraries)
 group :development, :test do
